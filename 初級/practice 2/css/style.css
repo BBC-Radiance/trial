@@ -25,6 +25,7 @@ a:hover {
 }
 
 .clear::after {
+  /* ⭕️擬似要素を追加し忘れてうまくいかなかった。もしもfloatを使用することがあるなら、このclearの使用はセットだと思うので、スニペットに登録しておいた（;fcle） */
   content: "";
   clear: both;
   display: block;
@@ -34,20 +35,20 @@ a:hover {
 header
 ======================*/
 header {
-  padding: 20px 0;
+  padding: 20px 0; /* ⭕️わからなかった。高さが足りないと感じてheightを設定していた。だが、この方がコンテンツのサイズが変わっても柔軟に対応できて良いと思う */
 }
 
 .header-left {
   float: left;
 }
 
-.header-right {
-  float: right;
+.header-title {
+  font-size: 24px;
+  font-weight: bold;
 }
 
-.header-title {
-  font-weight: bold;
-  font-size: 24px;
+.header-right {
+  float: right;
 }
 
 .header-nav-item {
@@ -56,37 +57,38 @@ header {
 }
 
 .header-nav-item a {
+  font-weight: 600; /* ⭕️最初 .header-rightの方に記述していて効かずに悩んだ。下層のタグに直接かけると良いのかも */
+  line-height: 36px; /* このようにピクセルで指定できることを忘れていた */
   font-size: 15px;
-  font-weight: 600;
-  line-height: 36px;
 }
 
 /* =====================
 top
 ======================*/
 .top {
-  background-image: url(../img/main-vsual-nontitle.png);
+  background-image: url(../img/main-vsual-nontitle.png); /* ⭕️ファイルのところから相対パスをコピーしたとき、最初の"../"がついていなかったので、うまくいかなかった。相対パスをコピーする際は注意する */
   background-size: cover;
   padding: 80px 0;
 }
 
 .top-title {
-  font-size: 48px;
-  font-weight: bold;
   text-align: center;
+  font-size: 48px; /* ♻️h2だが、左上のh1の文字よりもずっと大きなサイズにしているし、それで自然に見える */
   margin-bottom: 20px;
+  font-weight: bold;
 }
 
 .top-subtitle {
-  font-size: 18px;
   text-align: center;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 /* =====================
 section共通クラス
 ======================*/
 .section {
-  padding: 60px 0;
+  margin: 60px 0;
 }
 
 .section-title {
@@ -112,13 +114,14 @@ about
 /* =====================
 course
 ======================*/
-.course {
+.couse {
   background-color: #e3fcf4;
 }
 
 .course-wrapper {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .course-item {
@@ -137,22 +140,24 @@ input[type="email"],
 input[type="text"] {
   display: block;
   width: 600px;
-  border: 3px solid #d8d8d8;
+  text-align: center;
   font-size: 18px;
-  margin: auto;
-  margin-bottom: 20px;
-  padding: 15px;
   border-radius: 999px;
+  margin: auto; /* ⭕️こんな基本の中央揃えがわからなかった。⭕️text-align: center; と margin: auto; は意識して覚えておこう。テキスト系なら（？）text-align、ブロックならmarginか */
+  border: 3px solid #d8d8d8;
+  padding: 15px;
+  margin-bottom: 20px;
 }
 
 .btn {
   display: inline-block;
   padding: 20px 60px;
   background-color: #082b48;
-  color: #fff;
-  font-size: 24px;
-  font-weight: bold;
   border-radius: 4px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 24px;
+  border: none;
 }
 
 .btn:hover {
@@ -161,10 +166,9 @@ input[type="text"] {
 }
 
 .btn-register {
-  background-color: #ec6d64;
   display: block;
+  background-color: #ec6d64;
   margin: auto;
-  border: none;
 }
 
 /* =====================
@@ -194,7 +198,7 @@ footer {
   }
 
   .header-title {
-    text-align: center;
+    text-align: center; /* ♻️↑の.header-leftにつけていたし、それで問題ないように見えたが、こちらにつけた方が良いのだろうか */
   }
 
   .header-right {
@@ -203,23 +207,23 @@ footer {
 
   .header-nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* ⭕️marginを細かく触ったりせず、元のmarginは↓でリセットしつつ、space-betweenで良いように間隔をつけているのが興味深い。これも、幅の変化に対応しやすいものだろう。  ♻️space-betweenは素晴らしいってこと */
   }
 
   .header-nav-item {
     float: none;
-    /* margin: auto; */
     margin: 0;
   }
 
   .clear::after {
-  content: none;  
+    /* ここは記述しなくてもうまくいったように見えた。一応教えられた通り記述しておく */
+    content: none;
   }
 
   /* =====================
   top
   ======================*/
-  .top {
+  top {
     padding: 120px 0;
   }
 
@@ -235,24 +239,25 @@ footer {
   section共通クラス
   ======================*/
   .section {
-    padding: 80px 0;
+    /* ⭕️レスポンシブ対応をするときは、上から持ってきて、必要なところだけ触ると項目や現在の設定がわかったりしてよいかも。♻️他方本来いらない（触らなくて良い）ものも、見えてしまうのでに触りたくなってしまうかもしれないので注意 */
+    margin: 80px 0;
   }
 
   .section-title {
     font-size: 24px;
+    /* ちなみに、セクション見出し（.section-title）の下は、margin-bottomを変更していないので、結構空いているように見えたが、これで良い模様。使ってみるとこれが自然で見やすいのかも */
   }
 
   .section p {
     font-size: 14px;
   }
-
   /* =====================
   about
   ======================*/
   .about-left {
     float: none;
-    width: 100%;
     margin-bottom: 10px;
+    width: 100%;
   }
 
   .about-right {
@@ -263,10 +268,6 @@ footer {
   /* =====================
   course
   ======================*/
-  .course-wrapper {
-    flex-wrap: wrap;
-  }
-
   .course-item {
     width: 100%;
     margin-bottom: 20px;
@@ -275,16 +276,17 @@ footer {
   /* =====================
   contact
   ======================*/
-  input[type="text"],
-  input[type="email"] {
+  input[type="email"],
+  input[type="text"] {
     width: 100%;
   }
+  /* ちなみに、bottunのfont-sizeなどは変更しなかった */
 
   /* =====================
   footer
   ======================*/
   .copyright {
-    font-size: 10px;
     text-align: center;
-    }
+    font-size: 10px;
+  }
 }
