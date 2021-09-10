@@ -1,0 +1,27 @@
+.top {
+    background-image: url(../img/main-vsual-nontitle.png);
+    background-size: cover;
+    padding: 80px 0;
+}
+
+.course,
+.card {
+    background-color: #ddfcf2;
+}
+
+.card {
+    border: none;
+}
+
+.btn-orange {
+    background-color: #e46c66;
+    border: none;
+    padding: 25px 80px;
+}
+
+@media screen and (max-width: 767px) {
+    /* ウィンドウ幅が767px以下の場合に適用。「タブレットじゃなくなったら」(=「スマホになったら」) */
+    .top {
+        padding: 120px 0;
+    }
+}

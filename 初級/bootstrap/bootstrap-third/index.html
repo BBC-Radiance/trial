@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="./css/reset.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+            integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+            crossorigin="anonymous"
+        />
+        <title>Document</title>
+        <meta name="description" content="（検索結果に表示される説明文）" />
+        <link rel="icon" href="./favicon.ico" />
+        <link rel="stylesheet" href="./css/style.css" />
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light py-3">
+            <div class="container">
+                <a class="h3 m-0 font-weight-bold text-dark" href="#"
+                    >30DAYSトライアル</a
+                >
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div
+                    class="collapse navbar-collapse"
+                    id="navbarSupportedContent"
+                >
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link font-weight-bold" href="#"
+                                >デイトラとは
+                                <span class="sr-only">(current)</span></a
+                            >
+                        </li>
+                        <li class="nav-item active ml-3">
+                            <a class="nav-link font-weight-bold" href="#"
+                                >コース一覧
+                                <span class="sr-only">(current)</span></a
+                            >
+                        </li>
+                        <li class="nav-item active ml-3">
+                            <a class="nav-link font-weight-bold" href="#"
+                                >お問い合わせ
+                                <span class="sr-only">(current)</span></a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <section class="top">
+            <div class="container">
+                <h2 class="text-center mb-3 font-weight-bold h1">
+                    1日1題30日で<br />プロのWebエンジニアになろう！
+                </h2>
+                <p class="text-center">
+                    毎日設定された課題をこなすだけ！<br />
+                    未経験から30日でプログラミングスキルをつけよう
+                </p>
+            </div>
+        </section>
+
+        <section class="about py-5">
+            <div class="container">
+                <h2 class="display-5 text-center mb-5 mt-3 font-weight-bold">デイトラとは</h2>
+                <div class="row">
+                    <img src="./img/about.png" alt="about" class="col-md-6" />
+                    <p class="col-md-6">
+                        デイトラとは、無料で・迷わず・楽しく学べるプログラミング学習アプリです。
+                        毎日設定された課題をこなしていくだけで、未経験から30日でプログラミングスキルが身につきます。
+                        1日1題30日でプロのWebエンジニアを目指しましょう!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="course py-5">
+            <div class="container">
+                <h2 class="display-5 text-center mb-5 mt-3 font-weight-bold">コース一覧</h2>
+                <div class="row row-cols-1 row-cols-md-3">
+                    <div class="col mb-4">
+                        <div class="card">
+                            <img
+                                src="./img/web_first.png"
+                                class="card-img-top"
+                                alt="..."
+                            />
+                            <p class="card-text">HTML / CSS / Bootstrap</p>
+                        </div>
+                    </div>
+                    <div class="col mb-4">
+                        <div class="card">
+                            <img
+                                src="./img/web_second.png"
+                                class="card-img-top"
+                                alt="..."
+                            />
+                            <p class="card-text">
+                                HTML / CSS / JavaScript / jQuery
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col mb-4">
+                        <div class="card">
+                            <img
+                                src="./img/web_third.png"
+                                class="card-img-top"
+                                alt="..."
+                            />
+                            <p class="card-text">PHP / WordPress</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact py-5">
+            <div class="container">
+                <h2 class="display-5 text-center mb-5 mt-3 font-weight-bold">お問い合わせ</h2>
+                <p class="mb-3 text-center">さあ今日から30日間を始めよう！</p>
+                <form class="col-lg-8 m-auto">
+                    <input
+                        type="email"
+                        class="form-control mb-4"
+                        id="exampleInputEmail1"
+                        placeholder="メールアドレス"
+                    />
+                    <div class="text-center">
+                        <button
+                            class="
+                                btn-lg btn-orange
+                                font-weight-bold
+                                text-white
+                            "
+                        >
+                            無料で始める
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <footer class="bg-dark text-white py-3">
+            <p class="text-right m-0 small">
+                Copyright &copy; 2021 東京フリーランス ALL rights reserved.
+            </p>
+        </footer>
+
+        <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+        <script
+            src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
